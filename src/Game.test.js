@@ -11,16 +11,31 @@ xit('should display whose turn is next', () => {
 });
 
 //Test 7
+xit('should render the board to display squares', () => {
+    render(<Game />);
+    
+    expect(screen.getByRole('button', {name: 'square 1'})).toBeInTheDocument();
+});
+
+//Test 8
 xit('should rotate player turns when board square is clicked', () => {
     render(<Game />);
 
     playRound(1);
 
-    expect(screen.getByRole('button', {name: "square 1"})).toHaveTextContent('X');
     expect(screen.getByLabelText("Game Status")).toHaveTextContent('Next player: O');
 });
 
-//Test 8
+//Test 9
+xit('should update board when square is clicked', () => {
+    render(<Game />);
+
+    playRound(1);
+
+    expect(screen.getByRole('button', {name: "square 1"})).toHaveTextContent('X');
+});
+
+//Test 10
 xit('should rotate player back to X when board square is clicked', () => {
     render(<Game />);
 
@@ -30,16 +45,17 @@ xit('should rotate player back to X when board square is clicked', () => {
     expect(screen.getByLabelText("Game Status")).toHaveTextContent('Next player: X');
 });
 
-//Test 9
+//Test 11
 xit('should prevent multiple clicks to the same square', () => {
     render(<Game />);
 
     playRound(1,1);
     
     expect(screen.getByRole('button', {name: "square 1"})).toHaveTextContent('X');
+    expect(screen.getByLabelText("Game Status")).toHaveTextContent('Next player: O');
 });
 
-//Test 10
+//Test 12
 xit('should show winner status and block future clicks', () => {
     render(<Game />);
 

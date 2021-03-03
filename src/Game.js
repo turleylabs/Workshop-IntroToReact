@@ -8,6 +8,7 @@ export class Game extends React.Component {
     }
 
     status() {
+        return ``;
     }
 
     onClick(i) {
@@ -20,7 +21,7 @@ export class Game extends React.Component {
                     {/* Board */}
                 </div>
                 <div className="game-info">
-                    <div aria-label="Game Status">{/* status */}</div>
+                    <div aria-label="Game Status">{this.status()}</div>
                 </div>
             </div>
         );
