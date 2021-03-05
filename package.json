@@ -9,8 +9,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4",
-    "serve"
+    "serve": "^11.3.2",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "PUBLIC_URL=/absproxy/5000 react-scripts build && serve -s build",
